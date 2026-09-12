@@ -15,6 +15,7 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+<<<<<<< HEAD
           Padding(
             padding: const EdgeInsets.only(top: 100.0),
             child: Center(
@@ -24,16 +25,58 @@ class _HomePageState extends State<HomePage> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: const Color.fromARGB(255, 10, 71, 12),
+=======
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(color: Colors.amber),
+              child: Center(
+                child: const Text(
+                  'Visualizar Mensagens suspeitas',
+                  style: TextStyle(fontSize: 26),
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: GestureDetector(
+              onTap: () {
+                showMessage();
+              },
+              child: Container(
+                decoration: BoxDecoration(color: Colors.red),
+                child: Center(
+                  child: const Text(
+                    'Escolher Responsável',
+                    style: TextStyle(fontSize: 26),
+                  ),
+>>>>>>> 6d08f09c125ed4c174ef04c882ef42bc6f3b05f6
                 ),
                 child: Icon(Icons.shield_sharp, size: 80, color: Colors.green,),
               ),
             ),
           ),
+<<<<<<< HEAD
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 20, 0, 0),
             child: Text(
               'Proteção simples',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.green),
+=======
+          Expanded(
+            child: GestureDetector(
+              onTap: () {
+                print("Teste");
+              },
+              child: Container(
+                decoration: BoxDecoration(color: Colors.blue),
+                child: Center(
+                  child: const Text(
+                    'Solicitar Ajuda',
+                    style: TextStyle(fontSize: 26),
+                  ),
+                ),
+              ),
+>>>>>>> 6d08f09c125ed4c174ef04c882ef42bc6f3b05f6
             ),
           ),
           Padding(
