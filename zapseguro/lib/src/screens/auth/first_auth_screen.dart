@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zapseguro/src/screens/auth/choose_auth_screen.dart';
 import 'package:zapseguro/src/widgets/botton_choose.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,9 +14,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-<<<<<<< HEAD
           Padding(
             padding: const EdgeInsets.only(top: 100.0),
             child: Center(
@@ -25,58 +25,9 @@ class _HomePageState extends State<HomePage> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: const Color.fromARGB(255, 10, 71, 12),
-=======
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(color: Colors.amber),
-              child: Center(
-                child: const Text(
-                  'Visualizar Mensagens suspeitas',
-                  style: TextStyle(fontSize: 26),
                 ),
+                child: Icon(Icons.shield_sharp, size: 80, color: Colors.green),
               ),
-            ),
-          ),
-          Expanded(
-            child: GestureDetector(
-              onTap: () {
-                showMessage();
-              },
-              child: Container(
-                decoration: BoxDecoration(color: Colors.red),
-                child: Center(
-                  child: const Text(
-                    'Escolher Responsável',
-                    style: TextStyle(fontSize: 26),
-                  ),
->>>>>>> 6d08f09c125ed4c174ef04c882ef42bc6f3b05f6
-                ),
-                child: Icon(Icons.shield_sharp, size: 80, color: Colors.green,),
-              ),
-            ),
-          ),
-<<<<<<< HEAD
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16, 20, 0, 0),
-            child: Text(
-              'Proteção simples',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.green),
-=======
-          Expanded(
-            child: GestureDetector(
-              onTap: () {
-                print("Teste");
-              },
-              child: Container(
-                decoration: BoxDecoration(color: Colors.blue),
-                child: Center(
-                  child: const Text(
-                    'Solicitar Ajuda',
-                    style: TextStyle(fontSize: 26),
-                  ),
-                ),
-              ),
->>>>>>> 6d08f09c125ed4c174ef04c882ef42bc6f3b05f6
             ),
           ),
           Padding(
@@ -93,16 +44,32 @@ class _HomePageState extends State<HomePage> {
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
           ),
-          Center(child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: BottonChoose(tela: () {}, texto: 'Começar'),
-          )),
-
+          Spacer(),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 100),
+              child: SizedBox(
+                height: 50,
+                width: 250,
+                child: BottonChoose(
+                  tela: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const ChooseAuthScreen(),
+                      ),
+                    );
+                  },
+                  texto: 'Começar',
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
   }
 
+  /*
   Future<bool?> showMessage() {
     return showDialog(
       context: context,
@@ -135,5 +102,5 @@ class _HomePageState extends State<HomePage> {
         );
       },
     );
-  }
+  } */
 }

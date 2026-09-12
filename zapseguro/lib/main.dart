@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zapseguro/src/screens/home/home_page.dart';
+import 'package:zapseguro/src/screens/auth/first_auth_screen.dart';
 
 void main() {
   runApp(const MyApp());

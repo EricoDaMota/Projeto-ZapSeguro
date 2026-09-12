@@ -14,9 +14,7 @@ class _BottonChooseState extends State<BottonChoose> {
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
-      onPressed: () {
-        widget.tela;
-      },
+      onPressed: () => widget.tela(),
       style: OutlinedButton.styleFrom(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusGeometry.circular(15),
@@ -25,7 +23,7 @@ class _BottonChooseState extends State<BottonChoose> {
           width: 2,
           color: Colors.green,
         )
-      ), child: Text(widget.texto, style: TextStyle(fontWeight: FontWeight.bold, color: Colors.green),),
+      ), child: Text(widget.texto, style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey.shade800),),
     );
   }
 }
