@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zapseguro/src/widgets/botton_choose.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,53 +12,49 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('ZapSeguro')),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(color: Colors.amber),
-              child: Center(
-                child: const Text(
-                  'Verificar Segurança',
-                  style: TextStyle(fontSize: 26),
-                ),
-              ),
-            ),
-          ),
-          Expanded(
-            child: GestureDetector(
-              onTap: () {
-                showMessage();
-              },
+          Padding(
+            padding: const EdgeInsets.only(top: 100.0),
+            child: Center(
               child: Container(
-                decoration: BoxDecoration(color: Colors.red),
-                child: Center(
-                  child: const Text(
-                    'Checar notificalções',
-                    style: TextStyle(fontSize: 26),
-                  ),
+                height: 100,
+                width: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: const Color.fromARGB(255, 10, 71, 12),
                 ),
+                child: Icon(Icons.shield_sharp, size: 80, color: Colors.green,),
               ),
             ),
           ),
-          Expanded(
-            child: GestureDetector(
-              onTap: () {
-                print("Teste");
-              },
-              child: Container(
-                decoration: BoxDecoration(color: Colors.blue),
-                child: Center(
-                  child: const Text(
-                    'Cadastrar um novo Reponsável',
-                    style: TextStyle(fontSize: 26),
-                  ),
-                ),
-              ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 20, 0, 0),
+            child: Text(
+              'Proteção simples',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.green),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 10, 0, 15),
+            child: Text(
+              'Proteja quem você ama.',
+              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 5, 0, 15),
+            child: Text(
+              'Este aplicativo identifica mensagens potencialmente perigosas recebidas pelo WhatsApp e pode avisar automaticamente uma pessoa de confiança.',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Center(child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: BottonChoose(tela: () {}, texto: 'Começar'),
+          )),
+
         ],
       ),
     );
